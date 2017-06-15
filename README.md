@@ -1,5 +1,4 @@
 # miscellaneous_test
 Repository to test GitHub capabilities.
 
-.. image:: https://travis-ci.org/AlbertoMartinCajal/miscellaneous_test.svg?branch=master
-    :target: https://travis-ci.org/AlbertoMartinCajal/miscellaneous_test
+[![Build Status](https://travis-ci.org/AlbertoMartinCajal/miscellaneous_test.svg?branch=master)](https://travis-ci.org/AlbertoMartinCajal/miscellaneous_test)
