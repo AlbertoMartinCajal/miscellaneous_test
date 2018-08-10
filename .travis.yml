@@ -11,5 +11,5 @@ install: ./install-sw.sh
 
 script: 
 - make
-- hello
+- ./hello
 - flawfinder ./
