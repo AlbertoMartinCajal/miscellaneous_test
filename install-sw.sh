@@ -1,4 +1,4 @@
 #!/bin/bash
 
-pip install --upgrade pip
-pip install flawfinder
+sudo pip install --upgrade pip
+sudo pip install flawfinder
