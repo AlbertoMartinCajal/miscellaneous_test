@@ -1,6 +1,4 @@
 #include <gtk/gtk.h>
-#include "png_gradient.h"
-
 
 static void
 print_end_message (GtkWidget *widget,
@@ -16,9 +14,6 @@ activate (GtkApplication *app,
 {
   GtkWidget *window;
   GtkWidget *grid;
-  //GtkWidget *image;
-  GdkPixbuf* pixbuf;
-  GtkWidget* logo;
   GtkWidget *button;
   GtkWidget *button_box;
 
@@ -29,11 +24,6 @@ activate (GtkApplication *app,
   grid = gtk_grid_new ();
   gtk_container_add (GTK_CONTAINER (window), grid);
 
-  pixbuf = gdk_pixbuf_new_from_inline (-1, app_logo, FALSE, NULL);
-  //image = gtk_image_new_from_file ("png_gradient.png");
-  logo = gtk_image_new_from_pixbuf(pixbuf);
-  //gtk_container_add (GTK_CONTAINER (window), image);
-
   button_box = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
   //gtk_container_add (GTK_CONTAINER (window), button_box);
 
@@ -42,8 +32,7 @@ activate (GtkApplication *app,
   g_signal_connect_swapped (button, "clicked", G_CALLBACK (gtk_widget_destroy), window);
   gtk_container_add (GTK_CONTAINER (button_box), button);
 
-  gtk_grid_attach (GTK_GRID (grid), logo, 0, 0, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), button_box, 0, 1, 2, 1);
+  gtk_grid_attach (GTK_GRID (grid), button_box, 0, 1, 1, 1);
 
   gtk_widget_show_all (window);
 }
