@@ -7,9 +7,8 @@ sudo: required
 before_install:
 - chmod +x install-sw.sh
 
-install: ./install-sw.sh
+install: 
+- bash ./install-sw.sh
 
 script: 
-- make
-- ./my_gui
-- flawfinder ./
+- bash ./check_dependencies.sh
