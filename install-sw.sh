@@ -11,4 +11,4 @@ sudo apt-get install cppcheck
 
 wget http://downloads.sourceforge.net/ltp/lcov-1.11.tar.gz;
 tar xvfz lcov-1.11.tar.gz;
-make -C lcov-1.11;
+make install -C lcov-1.11;
