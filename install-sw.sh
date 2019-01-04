@@ -9,6 +9,6 @@ sudo apt-get install -y libpng-dev
 sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y cppcheck 
 
-wget http://downloads.sourceforge.net/ltp/lcov-1.11.tar.gz;
-tar xvfz lcov-1.11.tar.gz;
-make install -C lcov-1.11;
+#wget http://downloads.sourceforge.net/ltp/lcov-1.11.tar.gz;
+#tar xvfz lcov-1.11.tar.gz;
+#make install -C lcov-1.11;
