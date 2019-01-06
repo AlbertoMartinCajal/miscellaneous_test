@@ -1,13 +1,57 @@
-dist: trusty
+# This file configures the build and run environment on https://travis-ci.org/
 
+# Specify the operating systems on which to test for.
+os:
+  - linux
+
+# Project is C language
 language: c
 
-compiler: gcc
+dist: trusty
 
+# Specifiy which compiler or compilers to test against.
+# For details, see https://docs.travis-ci.com/user/languages/cpp/#Choosing-compilers-to-test-against
+compiler:
+  - gcc
+
+# Specify explicitly which branches to build or not build
+# For details see: https://docs.travis-ci.com/user/customizing-the-build/#Building-Specific-Branches
+branches:
+  only:
+    - master
+
+sudo: false
+
+# Specify which "apt" packages to install/update.
+# For white-listed aliases, see https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
+#
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - build-essential
+      - cmake
+      - gdb
+      - cmake-data
+      - gcc-6
+      - libc6-dev
+      - xorg-dev
+      - libx11-dev
+      - libxmu-dev
+      - libxi-dev
+      - libgl1-mesa-dev
+      - libosmesa-dev
+      - x11proto-core-dev
+      - lcov
+      - gcov
+      - libpng-dev
+      - zlib1g-dev
+      - cppcheck 
+
+before_install:
+  - yes | sudo pip install --upgrade pip
+  - yes | sudo pip install flawfinder
+  
 script:
-  - gcc -coverage -O0 hello.c -o hello
-  - ./hello
-  - gcov hello.c
-
-after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash check_dependencies.sh
