@@ -44,7 +44,6 @@ addons:
       - libosmesa-dev
       - x11proto-core-dev
       - lcov
-      - gcov
       - libpng-dev
       - zlib1g-dev
       - cppcheck 
