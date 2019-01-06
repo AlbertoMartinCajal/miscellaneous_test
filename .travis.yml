@@ -4,14 +4,10 @@ language: c
 
 compiler: gcc
 
-sudo: required
+script:
+  - gcc -coverage -O0 hello.c -o hello
+  - ./hello
+  - gcov hello.c
 
-before_install:
-  - sudo apt-get update
-  - chmod +x install-sw.sh
-
-install: 
-  - bash ./install-sw.sh
-
-script: 
-  - bash ./check_dependencies.sh
+after_success:
+- bash <(curl -s https://codecov.io/bash)
